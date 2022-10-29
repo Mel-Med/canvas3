@@ -11,21 +11,23 @@ const productos = [
 const li = document.getElementsByName("lista-de-productos")
 const $i = document.querySelector('.input');
 
-for (let i = 0; i < productos.length; i++) {
-  var d = document.createElement("div")
-  d.classList.add("producto")
 
-  var ti = document.createElement("p")
-  ti.classList.add("titulo")
-  ti.textContent = productos[i].nombre
+// Se cambia las variables
+for (let i = 0; i < productos.length; i++) {
+  let producto = document.createElement("div")
+  producto.classList.add("producto")
+
+  let titulo = document.createElement("p")
+  titulo.classList.add("titulo")
+  titulo.textContent = productos[i].nombre
   
-  var imagen = document.createElement("img");
+  let imagen = document.createElement("img");
   imagen.setAttribute('src', productos[i].img);
 
-  d.appendChild(ti)
-  d.appendChild(imagen)
+  titulo.appendChild(ti)
+  imagen.appendChild(imagen)
 
-  li.appendChild(d)
+  producto.appendChild(d)
 }
 
 displayProductos(productos)
@@ -41,20 +43,20 @@ botonDeFiltro.onclick = function() {
   const productosFiltrados = filtrado(productos, texto );
 
   for (let i = 0; i < productosFiltrados.length; i++) {
-    var d = document.createElement("div")
-    d.classList.add("producto")
+    let d = document.createElement("div")
+    producto.classList.add("producto")
   
-    var ti = document.createElement("p")
-    ti.classList.add("titulo")
-    ti.textContent = productosFiltrados[i].nombre
+    let titule = document.createElement("p")
+    titule.classList.add("titulo")
+    titule.textContent = productosFiltrados[i].nombre
     
-    var imagen = document.createElement("img");
-    imagen.setAttribute('src', productosFiltrados[i].img);
+    let image = document.createElement("img");
+    image.setAttribute('src', productosFiltrados[i].img);
   
-    d.appendChild(ti)
-    d.appendChild(imagen)
+    titule.appendChild(ti)
+    image.appendChild(imagen)
   
-    li.appendChild(d)
+    producto.appendChild(d)
   }
 }
 
